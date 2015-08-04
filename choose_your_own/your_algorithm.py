@@ -33,9 +33,16 @@ plt.show()
 
 
 
+from sklearn.ensemble import RandomForestClassifier
 
+clf = RandomForestClassifier(n_estimators = 100)
 
+clf.fit(features_train,labels_train)
 
+pred = clf.predict(features_test)
+
+from sklearn.metrics import accuracy_score
+print 'accuracy = ',accuracy_score(pred, labels_test)
 
 
 try:
