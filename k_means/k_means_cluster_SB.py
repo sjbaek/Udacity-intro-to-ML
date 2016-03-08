@@ -2,7 +2,7 @@
 
 """ 
     skeleton code for k-means clustering mini-project
-    
+
 """
 
 
@@ -66,7 +66,11 @@ plt.show()
 
 
 from sklearn.cluster import KMeans
-features_list = ["poi", feature_1, feature_2]
+
+feature_3 = "total_payments"
+
+features_list = ["poi", feature_1, feature_2, feature_3]
+# features_list = ["poi", feature_1, feature_2]
 data2 = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data2 )
 clf = KMeans(n_clusters=2)
@@ -81,3 +85,8 @@ try:
     Draw(pred, finance_features, poi, mark_poi=False, name="clusters.pdf", f1_name=feature_1, f2_name=feature_2)
 except NameError:
     print "no predictions object named pred found, no clusters to plot"
+
+
+
+
+

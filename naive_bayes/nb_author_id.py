@@ -41,7 +41,7 @@ pred = clf.predict(features_test)
 print "predicting time:", round(time() - t1, 3), "s"
 
 from sklearn.metrics import accuracy_score
-print accuracy_score(pred, labels_test)
+print accuracy_score(labels_test, pred)
     
 #########################################################
 
