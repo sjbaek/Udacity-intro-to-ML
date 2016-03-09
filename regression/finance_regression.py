@@ -1,16 +1,15 @@
 #!/usr/bin/python
 
 """
-    starter code for the regression mini-project
+    Starter code for the regression mini-project.
     
-    loads up/formats a modified version of the dataset
+    Loads up/formats a modified version of the dataset
     (why modified?  we've removed some trouble points
-    that you'll find yourself in the outliers mini-project)
+    that you'll find yourself in the outliers mini-project).
 
-    draws a little scatterplot of the training/testing data
+    Draws a little scatterplot of the training/testing data
 
-    you fill in the regression code where indicated
-
+    You fill in the regression code where indicated:
 """    
 
 
@@ -37,8 +36,8 @@ test_color = "r"
 
 ### Your regression goes here!
 ### Please name it reg, so that the plotting code below picks it up and 
-### plots it correctly. Don't forget to change the test_color from "b" to "r"
-### to differentiate training points from test points.
+### plots it correctly. Don't forget to change the test_color above from "b" to
+### "r" to differentiate training points from test points.
 
 from sklearn import linear_model
 
