@@ -27,7 +27,7 @@ def Draw(pred, features, poi, mark_poi=False, name="image.png", f1_name="feature
 
     ### plot each cluster with a different color--add more colors for
     ### drawing more than five clusters
-    colors = ["b", "c", "k", "m", "g"]
+    colors = ["b", "m", "k", "c", "g"]
     for ii, pp in enumerate(pred):
         plt.scatter(features[ii][0], features[ii][1], color = colors[pred[ii]])
 
@@ -71,12 +71,31 @@ plt.show()
 ### for the data and store them to a list called pred
 
 
+from sklearn.cluster import KMeans
+
+# ------------ with 2 features
+clf = KMeans(n_clusters=2)
+pred = clf.fit_predict( finance_features )
+#Draw(pred, finance_features, poi, name="clusters_before_scaling.pdf", f1_name=feature_1, f2_name=feature_2)
+
+# ------------ with 3 features
+#feature_3 = "total_payments"
+#features_list = ["poi", feature_1, feature_2, feature_3]
+
+#data2 = featureFormat(data_dict, features_list)
+
+#poi, finance_features = targetFeatureSplit(data2)
+#clf = KMeans(n_clusters=2)
+pred = clf.fit_predict( finance_features )
+
+
+
 
 
 ### rename the "name" parameter when you change the number of features
 ### so that the figure gets saved to a different file
 try:
-    Draw(pred, finance_features, poi, mark_poi=False, name="clusters.pdf", f1_name=feature_1, f2_name=feature_2)
+    Draw(pred, finance_features, poi, mark_poi=False, name="clusters_two.pdf", f1_name=feature_1, f2_name=feature_2)
 except NameError:
 
     print "no predictions object named pred found, no clusters to plot"
