@@ -31,14 +31,16 @@ plt.show()
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
-
-
 from sklearn.ensemble import RandomForestClassifier
 
+# random forest 오브젝트를 처음 만듬
 clf = RandomForestClassifier(n_estimators = 100)
 
+# 그 오브젝트에 데이터를 입력함. (내부적으로 모델 parameter가 정의되는 듯)
 clf.fit(features_train,labels_train)
 
+# 위에서 정의된 parameter를 토대로, 새로운 데이터 (feature_test)를 입력하면
+# 예측값 (=pred) 가 생성됨. 
 pred = clf.predict(features_test)
 
 from sklearn.metrics import accuracy_score
