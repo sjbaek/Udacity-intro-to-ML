@@ -29,8 +29,8 @@ from sklearn import svm
 #clf = svm.SVC(kernel = 'linear')
 clf = svm.SVC(kernel = 'rbf',C = 10000.0)
 #clf = svm.SVC(kernel = 'rbf')
-# features_train = features_train[:len(features_train)/100]
-# labels_train = labels_train[:len(labels_train)/100]
+features_train = features_train[:len(features_train)/100]
+labels_train = labels_train[:len(labels_train)/100]
 
 t0 = time()
 clf.fit(features_train,labels_train)
@@ -45,7 +45,10 @@ from sklearn.metrics import accuracy_score
 acc = accuracy_score(pred, labels_test)
 print acc
 
-#print pred[10], pred[26], pred[50]
+# with 1% of data set + C = 10000.
+print pred[10], pred[26], pred[50]
+
+# with full data set + C = 10000.
 print sum(pred)
 #########################################################
 
